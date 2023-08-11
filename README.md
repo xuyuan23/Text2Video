@@ -22,6 +22,14 @@ git clone https://huggingface.co/damo-vilab/text-to-video-ms-1.7b
 # git clone https://huggingface.co/cerspense/zeroscope_v2_576w
 
 pip install -r requirements.txt
+
+
+# to make package `moviepy` works, install FFmpeg firstly, otherwise you can't open video dirrectly.
+sudo yum install epel-release
+sudo rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro
+sudo rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-1.el7.nux.noarch.rpm
+sudo yum install ffmpeg
+ffmpeg -version
 ```
 
 - start project.
