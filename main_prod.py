@@ -20,7 +20,7 @@ OUT_IP = "127.0.0.1"
 # the image generated path, default in /var/www/html, if you start a httpd service, you can access by {OUT_IP/video.mp4}
 GENERATED_IMAGES_PATH = "/var/www/html"
 
-ROOT_PATH = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+ROOT_PATH = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.join(ROOT_PATH, "data")
 MODEL_PATH = os.path.join(ROOT_PATH, "models")
 
