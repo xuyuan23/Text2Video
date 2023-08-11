@@ -64,4 +64,5 @@ curl -X POST -H "Content-Type: application/json" -d '{
 }
 ```
 
+https://github.com/xuyuan23/Text2Video/assets/26043513/56e5bf3b-409e-4f52-a059-57d899b1b0a3
 
