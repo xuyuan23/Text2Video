@@ -149,7 +149,6 @@ allure-results
 .vscode
 
 
-*.txt
 docs/scripts/set_env.sh
 key.yaml
 output.json
