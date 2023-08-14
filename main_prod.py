@@ -28,6 +28,9 @@ pipe = DiffusionPipeline.from_pretrained(os.path.join(MODEL_PATH, VIDEO_MODEL), 
 pipe.scheduler = DPMSolverMultistepScheduler.from_config(pipe.scheduler.config)
 pipe.enable_model_cpu_offload()
 
+if not os.path.exists(DATA_PATH):
+    os.makedirs(DATA_PATH)
+
 
 class LLMPrompt(BaseModel):
     prompt: str = None
@@ -41,7 +44,7 @@ class LLMPrompt(BaseModel):
 def generate_video(lp: LLMPrompt):
 
     try:
-        video_frames = pipe(lp.prompt, lp.num_inference_steps, lp.height, lp.width, lp.num_frames).frames
+        video_frames = pipe(prompt=lp.prompt, num_inference_steps=lp.num_inference_steps, height=lp.height, width=lp.width, num_frames=lp.num_frames).frames
         timestamp = int(time.time())
         video_name_tmp = f"{VIDEO_MODEL}_{str(timestamp)}_tmp.mp4"
         video_path = export_to_video(video_frames, os.path.join(DATA_PATH, video_name_tmp))
